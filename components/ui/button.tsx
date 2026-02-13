@@ -1,3 +1,4 @@
+import { Colors, FontName } from "@/constants/theme";
 import { Platform, Pressable, StyleSheet, Text } from "react-native";
 
 const Button = (props: {
@@ -43,21 +44,21 @@ const style = StyleSheet.create({
     fontSize: 16,
     lineHeight: 16,
     fontFamily: Platform.select({
-      android: "Poppins_500Medium",
-      ios: "Poppins-Medium",
+      android: FontName.android.medium,
+      ios: FontName.ios.medium,
     }),
   },
   primaryWrapper: {
-    backgroundColor: "#0D0D0D",
+    backgroundColor: Colors.primaryDark,
   },
   secondaryWrapper: {
-    backgroundColor: "#F2F2F3",
+    backgroundColor: Colors.primaryOffWhite,
   },
   primaryText: {
-    color: "white",
+    color: Colors.primaryLight,
   },
   secondaryText: {
-    color: "#0D0D0D",
+    color: Colors.primaryDark,
   },
   pressed: {
     opacity: 0.75,

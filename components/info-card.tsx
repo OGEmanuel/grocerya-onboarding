@@ -1,3 +1,4 @@
+import { Colors, FontName } from "@/constants/theme";
 import { Dimensions, Platform, StyleSheet, Text, View } from "react-native";
 
 const FULL_WIDTH = Dimensions.get("window").width;
@@ -42,17 +43,17 @@ const style = StyleSheet.create({
     fontSize: 20,
     lineHeight: 24,
     fontFamily: Platform.select({
-      android: "Poppins_600SemiBold",
-      ios: "Poppins-SemiBold",
+      android: FontName.android.semibold,
+      ios: FontName.ios.semibold,
     }),
   },
   description: {
     fontSize: 16,
-    color: "#777777",
+    color: Colors.primaryGray,
     lineHeight: 25.6,
     fontFamily: Platform.select({
-      android: "Poppins_400Regular",
-      ios: "Poppins-Regular",
+      android: FontName.android.regular,
+      ios: FontName.ios.regular,
     }),
   },
 });

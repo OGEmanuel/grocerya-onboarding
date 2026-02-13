@@ -9,7 +9,8 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ogunmola.secondassessment"
     },
     "android": {
       "adaptiveIcon": {
@@ -17,7 +18,8 @@
         "backgroundImage": "./assets/images/splash-logo.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ogunmola.secondassessment"
     },
     "web": {
       "output": "static",
@@ -46,10 +48,10 @@
         "expo-font",
         {
           "fonts": [
-            "../node_modules/@expo-google-fonts/poppins/400Regular/Poppins_400Regular.ttf",
-            "../node_modules/@expo-google-fonts/poppins/500Medium/Poppins_500Medium.ttf",
-            "../node_modules/@expo-google-fonts/poppins/600SemiBold/Poppins_600SemiBold.ttf",
-            "../node_modules/@expo-google-fonts/poppins/700Bold/Poppins_700Bold.ttf"
+            "./assets/fonts/Poppins_400Regular.ttf",
+            "./assets/fonts/Poppins_500Medium.ttf",
+            "./assets/fonts/Poppins_600SemiBold.ttf",
+            "./assets/fonts/Poppins_700Bold.ttf"
           ]
         }
       ]

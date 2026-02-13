@@ -2,6 +2,7 @@ import Indicator from "@/components/indicator";
 import InfoCard from "@/components/info-card";
 import Button from "@/components/ui/button";
 import { INFO } from "@/constants/info";
+import { Colors } from "@/constants/theme";
 import { useRef, useState } from "react";
 import {
   Dimensions,
@@ -77,7 +78,7 @@ export default function HomeScreen() {
 const style = StyleSheet.create({
   mainWrapper: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.primaryLight,
   },
   itemContainer: {
     flex: 1,

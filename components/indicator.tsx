@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/theme";
 import { StyleSheet, View } from "react-native";
 
 const Indicator = (props: { page: number; totalPages: number }) => {
@@ -30,10 +31,10 @@ const style = StyleSheet.create({
     paddingHorizontal: 20,
   },
   active: {
-    backgroundColor: "#0D0D0D",
+    backgroundColor: Colors.primaryDark,
   },
   inactive: {
-    backgroundColor: "#F2F2F3",
+    backgroundColor: Colors.primaryOffWhite,
   },
   indicator: {
     height: 3,
