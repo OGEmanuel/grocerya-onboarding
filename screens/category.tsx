@@ -62,10 +62,7 @@ const CategoryScreen = () => {
           </View>
         </View>
         <View style={style.buttonContainer}>
-          <Button
-            label="Continue"
-            onPress={() => router.push("/get-started")}
-          />
+          <Button label="Continue" onPress={() => router.push("/location")} />
         </View>
       </View>
     </SafeAreaWrapper>

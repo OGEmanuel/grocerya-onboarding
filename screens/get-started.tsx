@@ -12,7 +12,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   StyleSheet,
-  Text,
   TextInput,
   TouchableWithoutFeedback,
   View,

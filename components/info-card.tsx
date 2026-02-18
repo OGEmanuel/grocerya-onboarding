@@ -1,4 +1,10 @@
-import { Dimensions, StyleSheet, View } from "react-native";
+import {
+  Dimensions,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from "react-native";
 import TitleTexts from "./onboarding/title-texts";
 
 const FULL_WIDTH = Dimensions.get("window").width;
@@ -7,16 +13,17 @@ const InfoCard = (props: {
   children: React.ReactNode;
   title: string;
   description: string;
+  style?: StyleProp<ViewStyle>;
 }) => {
-  const { children, title, description } = props;
+  const { children, title, description, style } = props;
 
   return (
-    <View style={style.wrapper}>
+    <View style={[styles.wrapper, style]}>
       <View>{children}</View>
       <TitleTexts
         title={title}
-        style={style.textWrapper}
-        descriptionStyle={style.text}
+        style={styles.textWrapper}
+        descriptionStyle={styles.text}
       >
         {description}
       </TitleTexts>
@@ -26,7 +33,7 @@ const InfoCard = (props: {
 
 export default InfoCard;
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   wrapper: {
     gap: 28,
     alignItems: "center",
