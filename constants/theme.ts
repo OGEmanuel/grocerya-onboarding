@@ -17,3 +17,9 @@ export const FontName = {
     medium: "Poppins-Medium",
   },
 };
+
+export const unitSize = {
+  md: 20,
+  xl: 40,
+  opacity: 0.75,
+};

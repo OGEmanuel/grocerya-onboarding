@@ -1,5 +1,5 @@
-import { Colors, FontName } from "@/constants/theme";
-import { Dimensions, Platform, StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
+import TitleTexts from "./onboarding/title-texts";
 
 const FULL_WIDTH = Dimensions.get("window").width;
 
@@ -13,10 +13,13 @@ const InfoCard = (props: {
   return (
     <View style={style.wrapper}>
       <View>{children}</View>
-      <View style={style.textWrapper}>
-        <Text style={style.title}>{title}</Text>
-        <Text style={[style.text, style.description]}>{description}</Text>
-      </View>
+      <TitleTexts
+        title={title}
+        style={style.textWrapper}
+        descriptionStyle={style.text}
+      >
+        {description}
+      </TitleTexts>
     </View>
   );
 };
@@ -33,27 +36,8 @@ const style = StyleSheet.create({
   },
   textWrapper: {
     alignItems: "center",
-    gap: 8,
   },
   text: {
     textAlign: "center",
-  },
-  title: {
-    fontWeight: 600,
-    fontSize: 20,
-    lineHeight: 24,
-    fontFamily: Platform.select({
-      android: FontName.android.semibold,
-      ios: FontName.ios.semibold,
-    }),
-  },
-  description: {
-    fontSize: 16,
-    color: Colors.primaryGray,
-    lineHeight: 25.6,
-    fontFamily: Platform.select({
-      android: FontName.android.regular,
-      ios: FontName.ios.regular,
-    }),
   },
 });
