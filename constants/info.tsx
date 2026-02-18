@@ -994,3 +994,38 @@ export const countries = [
     image: { uri: "https://flagcdn.com/w40/zw.png" },
   },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    name: "Gluten-Free",
+  },
+  {
+    id: 2,
+    name: "Vegan Friendly",
+  },
+  {
+    id: 3,
+    name: "Raw Meat",
+  },
+  {
+    id: 4,
+    name: "Organic",
+  },
+  {
+    id: 5,
+    name: "Dairy-Free",
+  },
+  {
+    id: 6,
+    name: "Sugar-Free",
+  },
+  {
+    id: 7,
+    name: "Cruelty-Free",
+  },
+  {
+    id: 8,
+    name: "Processed Food",
+  },
+];

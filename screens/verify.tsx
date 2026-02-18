@@ -38,13 +38,7 @@ const VerifyScreen = () => {
     },
     onSubmit: async ({ value }) => {
       console.log(value);
-      // router.push({
-      //   pathname: "/verify",
-      //   params: {
-      //     code: value.phoneCode.slice(5).trim(),
-      //     phoneNumber: value.phoneNumber,
-      //   },
-      // });
+      router.replace("/category");
       form.reset();
     },
   });
@@ -148,7 +142,8 @@ const style = StyleSheet.create({
   footerTextStyle: {
     color: Colors.primaryGray,
     fontSize: 12,
-    fontWeight: "medium",
+    textAlign: "center",
+    fontWeight: 500,
     fontFamily: Platform.select({
       android: FontName.android.medium,
       ios: FontName.ios.medium,
