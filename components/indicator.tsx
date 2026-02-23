@@ -1,4 +1,4 @@
-import { Colors } from "@/constants/theme";
+import { Colors, unitSize } from "@/constants/theme";
 import { StyleSheet, View } from "react-native";
 
 const Indicator = (props: { page: number; totalPages: number }) => {
@@ -28,7 +28,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     gap: 2,
     paddingTop: 40,
-    paddingHorizontal: 20,
+    paddingHorizontal: unitSize.md,
   },
   active: {
     backgroundColor: Colors.primaryDark,

@@ -1,5 +1,11 @@
-import { Colors, FontName } from "@/constants/theme";
-import { Dimensions, Platform, StyleSheet, Text, View } from "react-native";
+import {
+  Dimensions,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from "react-native";
+import TitleTexts from "./onboarding/title-texts";
 
 const FULL_WIDTH = Dimensions.get("window").width;
 
@@ -7,23 +13,27 @@ const InfoCard = (props: {
   children: React.ReactNode;
   title: string;
   description: string;
+  style?: StyleProp<ViewStyle>;
 }) => {
-  const { children, title, description } = props;
+  const { children, title, description, style } = props;
 
   return (
-    <View style={style.wrapper}>
+    <View style={[styles.wrapper, style]}>
       <View>{children}</View>
-      <View style={style.textWrapper}>
-        <Text style={style.title}>{title}</Text>
-        <Text style={[style.text, style.description]}>{description}</Text>
-      </View>
+      <TitleTexts
+        title={title}
+        style={styles.textWrapper}
+        descriptionStyle={styles.text}
+      >
+        {description}
+      </TitleTexts>
     </View>
   );
 };
 
 export default InfoCard;
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   wrapper: {
     gap: 28,
     alignItems: "center",
@@ -33,27 +43,8 @@ const style = StyleSheet.create({
   },
   textWrapper: {
     alignItems: "center",
-    gap: 8,
   },
   text: {
     textAlign: "center",
-  },
-  title: {
-    fontWeight: 600,
-    fontSize: 20,
-    lineHeight: 24,
-    fontFamily: Platform.select({
-      android: FontName.android.semibold,
-      ios: FontName.ios.semibold,
-    }),
-  },
-  description: {
-    fontSize: 16,
-    color: Colors.primaryGray,
-    lineHeight: 25.6,
-    fontFamily: Platform.select({
-      android: FontName.android.regular,
-      ios: FontName.ios.regular,
-    }),
   },
 });
