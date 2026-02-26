@@ -4,9 +4,10 @@ import SafeAreaWrapper from "@/components/safe-area-wrapper";
 import Button from "@/components/ui/button";
 import CustomText from "@/components/ui/custom-text";
 import OTPInput from "@/components/ui/otp-input";
+import { Nav } from "@/constants";
 import { Colors, FontName, unitSize } from "@/constants/theme";
+import { useNavigation } from "@react-navigation/native";
 import { revalidateLogic, useForm } from "@tanstack/react-form";
-import { useLocalSearchParams, useRouter } from "expo-router";
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -25,8 +26,7 @@ const formSchema = z.object({
 });
 
 const VerifyScreen = () => {
-  const router = useRouter();
-  const params = useLocalSearchParams<{ code: string; phoneNumber: string }>();
+  const navigation = useNavigation<Nav>();
 
   const form = useForm({
     defaultValues: {
@@ -38,7 +38,7 @@ const VerifyScreen = () => {
     },
     onSubmit: async ({ value }) => {
       console.log(value);
-      router.replace("/category");
+      navigation.navigate("Category");
       form.reset();
     },
   });
@@ -53,15 +53,13 @@ const VerifyScreen = () => {
           <View style={style.mainContainer}>
             <View style={style.mainContent}>
               <View style={style.headerContainer}>
-                <Header onPress={() => router.replace("/get-started")} />
+                <Header onPress={() => navigation.replace("GetStarted")} />
                 <TitleTexts
                   title="Enter your OTP number"
                   descriptionStyle={style.headerDescription}
                 >
                   We’ve sent the OTP number via sms to{" "}
-                  <Text style={style.phoneNumberStyle}>
-                    {params.code} {params.phoneNumber}
-                  </Text>
+                  <Text style={style.phoneNumberStyle}>+234 8123456789</Text>
                 </TitleTexts>
               </View>
               <form.Field name="otp">

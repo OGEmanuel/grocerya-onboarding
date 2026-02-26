@@ -5,7 +5,6 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/splash-logo.png",
-    "scheme": "secondassessment",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -31,7 +30,6 @@
       "backgroundColor": "#0D0D0D"
     },
     "plugins": [
-      "expo-router",
       [
         "expo-splash-screen",
         {

@@ -3,15 +3,17 @@ import Location from "@/components/jsx-icons/location";
 import Header from "@/components/onboarding/header";
 import SafeAreaWrapper from "@/components/safe-area-wrapper";
 import Button from "@/components/ui/button";
+import { Nav } from "@/constants";
 import { unitSize } from "@/constants/theme";
-import { useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, View } from "react-native";
 
 const LocationScreen = () => {
-  const router = useRouter();
+  const navigation = useNavigation<Nav>();
+
   return (
     <SafeAreaWrapper style={style.container}>
-      <Header onPress={() => router.replace("/category")} />
+      <Header onPress={() => navigation.navigate("Category")} />
       <InfoCard
         title="Set your location"
         description="This let us know your location for best shipping experience"
@@ -23,14 +25,14 @@ const LocationScreen = () => {
         <View style={style.buttonViewStyle}>
           <Button
             label="Allow Google Maps"
-            onPress={() => router.push("/notifications")}
+            onPress={() => navigation.push("Notification")}
           />
         </View>
         <View style={style.buttonViewStyle}>
           <Button
             variant="secondary"
             label="Set Manually"
-            onPress={() => router.push("/notifications")}
+            onPress={() => navigation.navigate("Notification")}
           />
         </View>
       </View>

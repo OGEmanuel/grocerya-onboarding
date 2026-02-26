@@ -3,15 +3,16 @@ import TitleTexts from "@/components/onboarding/title-texts";
 import SafeAreaWrapper from "@/components/safe-area-wrapper";
 import Button from "@/components/ui/button";
 import CustomText from "@/components/ui/custom-text";
+import { Nav } from "@/constants";
 import { categories } from "@/constants/info";
 import { Colors, unitSize } from "@/constants/theme";
-import { useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
 const CategoryScreen = () => {
   const [selected, setSelected] = useState([{ id: 1, name: "Gluten-Free" }]);
-  const router = useRouter();
+  const navigation = useNavigation<Nav>();
 
   const handleSelect = (id: number) => {
     setSelected((prev) => {
@@ -37,7 +38,7 @@ const CategoryScreen = () => {
       <View style={style.container}>
         <View style={style.mainContent}>
           <View style={style.headerContainer}>
-            <Header onPress={() => router.replace("/get-started")} />
+            <Header onPress={() => navigation.replace("GetStarted")} />
             <TitleTexts title="All your grocery need in one place">
               Select your desired shop category
             </TitleTexts>
@@ -62,7 +63,10 @@ const CategoryScreen = () => {
           </View>
         </View>
         <View style={style.buttonContainer}>
-          <Button label="Continue" onPress={() => router.push("/location")} />
+          <Button
+            label="Continue"
+            onPress={() => navigation.navigate("Location")}
+          />
         </View>
       </View>
     </SafeAreaWrapper>

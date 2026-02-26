@@ -3,17 +3,18 @@ import Header from "@/components/onboarding/header";
 import TitleTexts from "@/components/onboarding/title-texts";
 import SafeAreaWrapper from "@/components/safe-area-wrapper";
 import Button from "@/components/ui/button";
+import { Nav } from "@/constants";
 import { unitSize } from "@/constants/theme";
-import { useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, View } from "react-native";
 
 const NotificationsScreen = () => {
-  const router = useRouter();
+  const navigation = useNavigation<Nav>();
 
   return (
     <SafeAreaWrapper style={style.container}>
       <View style={style.headerStyle}>
-        <Header onPress={() => router.push("/location")} />
+        <Header onPress={() => navigation.navigate("Location")} />
         <TitleTexts title="Lastly, please enable notification">
           Enable your notifications for more update and important messages about
           your grocery needs

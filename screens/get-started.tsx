@@ -4,9 +4,10 @@ import SafeAreaWrapper from "@/components/safe-area-wrapper";
 import Button from "@/components/ui/button";
 import CustomText from "@/components/ui/custom-text";
 import SelectCountryScreen from "@/components/ui/dropdown";
+import { Nav } from "@/constants";
 import { Colors, FontName, unitSize } from "@/constants/theme";
+import { useNavigation } from "@react-navigation/native";
 import { revalidateLogic, useForm } from "@tanstack/react-form";
-import { useRouter } from "expo-router";
 import {
   Keyboard,
   KeyboardAvoidingView,
@@ -28,7 +29,7 @@ const formSchema = z.object({
 });
 
 const GetStartedScreen = () => {
-  const router = useRouter();
+  const navigation = useNavigation<Nav>();
 
   const form = useForm({
     defaultValues: {
@@ -40,13 +41,7 @@ const GetStartedScreen = () => {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      router.push({
-        pathname: "/verify",
-        params: {
-          code: value.phoneCode.slice(5).trim(),
-          phoneNumber: value.phoneNumber,
-        },
-      });
+      navigation.push("Verify");
       form.reset();
     },
   });
