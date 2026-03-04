@@ -2,10 +2,11 @@ import Indicator from "@/components/indicator";
 import InfoCard from "@/components/info-card";
 import SafeAreaWrapper from "@/components/safe-area-wrapper";
 import Button from "@/components/ui/button";
+import { Nav } from "@/constants";
 import { INFO } from "@/constants/info";
 import { unitSize } from "@/constants/theme";
 import { getFullWidth } from "@/lib/util";
-import { useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import { useRef, useState } from "react";
 import {
   NativeScrollEvent,
@@ -18,7 +19,7 @@ import {
 const Intro = () => {
   const scrollRef = useRef<ScrollView>(null);
   const [page, setPage] = useState<number>(0);
-  const router = useRouter();
+  const navigation = useNavigation<Nav>();
 
   const handleScrollEnd = (
     e: NativeSyntheticEvent<NativeScrollEvent>,
@@ -36,7 +37,7 @@ const Intro = () => {
 
   const goToNextPage = (): void => {
     if (page === INFO.length - 1) {
-      router.push("/get-started");
+      navigation.navigate("GetStarted");
       return;
     }
     scrollToPage(page + 1);
@@ -68,7 +69,7 @@ const Intro = () => {
             <Button
               variant="secondary"
               label="Skip"
-              onPress={() => router.push("/get-started")}
+              onPress={() => scrollToPage(3)}
             />
           )}
           <Button
