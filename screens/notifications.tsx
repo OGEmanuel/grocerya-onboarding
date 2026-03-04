@@ -28,7 +28,11 @@ const NotificationsScreen = () => {
           <Button label="Enable Notifications" />
         </View>
         <View style={style.buttonViewStyle}>
-          <Button variant="secondary" label="Skip For Now" />
+          <Button
+            variant="secondary"
+            label="Skip For Now"
+            onPress={() => navigation.navigate("HomeTabs")}
+          />
         </View>
       </View>
     </SafeAreaWrapper>

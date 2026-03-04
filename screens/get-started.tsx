@@ -24,7 +24,7 @@ const formSchema = z.object({
     error: "Please select a country code",
   }),
   phoneNumber: z.string().min(9, {
-    error: "Please enter a valid number",
+    error: "Phone number should be at least 9 digits",
   }),
 });
 

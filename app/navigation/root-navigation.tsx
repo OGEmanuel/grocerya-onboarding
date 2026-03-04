@@ -5,8 +5,44 @@ import LocationScreen from "@/screens/location";
 import NotificationsScreen from "@/screens/notifications";
 import VerifyScreen from "@/screens/verify";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeTabs from "./home-navigation";
 
 const Stack = createNativeStackNavigator();
+
+const SCREENS = [
+  {
+    name: "Intro",
+    component: Intro,
+  },
+  {
+    name: "GetStarted",
+    component: GetStartedScreen,
+  },
+  {
+    name: "Verify",
+    component: VerifyScreen,
+  },
+  {
+    name: "Category",
+    component: CategoryScreen,
+  },
+  {
+    name: "Location",
+    component: LocationScreen,
+  },
+  {
+    name: "Notification",
+    component: NotificationsScreen,
+  },
+  {
+    name: "HomeTabs",
+    component: HomeTabs,
+  },
+  // {
+  //   name: "DrawerTabs",
+  //   component: MyDrawer,
+  // },
+];
 
 export default function RootNavigator() {
   return (
@@ -15,12 +51,13 @@ export default function RootNavigator() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Home" component={Intro} />
-      <Stack.Screen name="GetStarted" component={GetStartedScreen} />
-      <Stack.Screen name="Verify" component={VerifyScreen} />
-      <Stack.Screen name="Category" component={CategoryScreen} />
-      <Stack.Screen name="Location" component={LocationScreen} />
-      <Stack.Screen name="Notification" component={NotificationsScreen} />
+      {SCREENS.map((screen) => (
+        <Stack.Screen
+          key={screen.name}
+          name={screen.name}
+          component={screen.component}
+        />
+      ))}
     </Stack.Navigator>
   );
 }

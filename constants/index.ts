@@ -2,6 +2,8 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type RootStackParamList = {
   Home: undefined;
+  HomeTabs: undefined;
+  Intro: undefined;
   GetStarted: undefined;
   Verify: undefined;
   Category: undefined;
