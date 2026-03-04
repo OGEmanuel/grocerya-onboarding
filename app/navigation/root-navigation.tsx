@@ -5,7 +5,7 @@ import LocationScreen from "@/screens/location";
 import NotificationsScreen from "@/screens/notifications";
 import VerifyScreen from "@/screens/verify";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeTabs from "./home-navigation";
+import MyDrawer from "./drawer-navigation";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,13 +35,9 @@ const SCREENS = [
     component: NotificationsScreen,
   },
   {
-    name: "HomeTabs",
-    component: HomeTabs,
+    name: "DrawerTabs",
+    component: MyDrawer,
   },
-  // {
-  //   name: "DrawerTabs",
-  //   component: MyDrawer,
-  // },
 ];
 
 export default function RootNavigator() {

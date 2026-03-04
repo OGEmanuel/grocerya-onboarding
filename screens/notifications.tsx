@@ -31,7 +31,7 @@ const NotificationsScreen = () => {
           <Button
             variant="secondary"
             label="Skip For Now"
-            onPress={() => navigation.navigate("HomeTabs")}
+            onPress={() => navigation.navigate("DrawerTabs")}
           />
         </View>
       </View>

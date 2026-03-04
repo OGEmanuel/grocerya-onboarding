@@ -1,7 +1,4 @@
-import CartIcon from "@/components/jsx-icons/cart-icon";
-import FaveIcon from "@/components/jsx-icons/fave-icon";
-import HomeIcon from "@/components/jsx-icons/home-icon";
-import ProfileIcon from "@/components/jsx-icons/profile-icon";
+import TabIconView from "@/components/tab-icon-view";
 import CustomText from "@/components/ui/custom-text";
 import { Colors } from "@/constants/theme";
 import Home from "@/screens/home";
@@ -9,7 +6,7 @@ import Cart from "@/screens/home/cart";
 import Favorite from "@/screens/home/favorite";
 import Profile from "@/screens/home/profile";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -50,18 +47,7 @@ const HomeTabs = () => {
                 justifyContent: "center",
               }}
             >
-              {route.name === "Home" && (
-                <HomeIcon fill={focused ? color : Colors.secondaryGray} />
-              )}
-              {route.name === "Cart" && (
-                <CartIcon fill={focused ? color : Colors.secondaryGray} />
-              )}
-              {route.name === "Favorite" && (
-                <FaveIcon fill={focused ? color : Colors.secondaryGray} />
-              )}
-              {route.name === "Profile" && (
-                <ProfileIcon fill={focused ? color : Colors.secondaryGray} />
-              )}
+              <TabIconView name={route.name} focused={focused} color={color} />
               {focused && (
                 <CustomText
                   style={{
@@ -103,22 +89,3 @@ const HomeTabs = () => {
 };
 
 export default HomeTabs;
-
-const style = StyleSheet.create({
-  tabContainer: {
-    flexDirection: "row",
-    gap: 8,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    height: 40,
-  },
-  tabButtonStyle: {
-    borderRadius: 10,
-  },
-  tabLabel: {
-    color: Colors.primaryDark,
-    fontWeight: "500",
-  },
-});
