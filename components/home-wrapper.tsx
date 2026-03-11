@@ -43,10 +43,8 @@ const HomeWrapper = (props: {
           </CustomText>
           {page === "Profile" && (
             <View>
-              <CustomText>Full Name: {fullName ?? "John Doe"}</CustomText>
-              <CustomText>
-                Email Address: {emailAddress ?? "john.doe@example.com"}
-              </CustomText>
+              <CustomText>Full Name: {fullName}</CustomText>
+              <CustomText>Email Address: {emailAddress}</CustomText>
             </View>
           )}
         </View>
