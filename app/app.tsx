@@ -1,8 +1,8 @@
 import { RootStackParamListMain } from "@/constants";
 import { LinkingOptions, NavigationContainer } from "@react-navigation/native";
+import * as Linking from "expo-linking";
 import { Text } from "react-native";
 import RootNavigator from "./navigation/root-navigation";
-import * as Linking from "expo-linking";
 
 const config = {
   screens: {

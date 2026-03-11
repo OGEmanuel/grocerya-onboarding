@@ -6,13 +6,13 @@ type ProfileScreenRouteProp = RouteProp<HomeTabsParamList, "Profile">;
 
 const Profile = () => {
   const route = useRoute<ProfileScreenRouteProp>();
-  const { fullName, emailAddress } = route.params;
+  const { fullName, emailAddress } = route.params ?? {};
 
   return (
     <HomeWrapper
       page="Profile"
-      fullName={fullName}
-      emailAddress={emailAddress}
+      fullName={fullName ?? "John Doe"}
+      emailAddress={emailAddress ?? "john.doe@example.com"}
     />
   );
 };
