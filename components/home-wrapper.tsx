@@ -13,8 +13,12 @@ type DrawerParamList = {
 
 type DrawerNav = DrawerNavigationProp<DrawerParamList>;
 
-const HomeWrapper = (props: { page: string }) => {
-  const { page } = props;
+const HomeWrapper = (props: {
+  page: string;
+  fullName?: string;
+  emailAddress?: string;
+}) => {
+  const { page, fullName, emailAddress } = props;
   const navigation = useNavigation<DrawerNav>();
 
   return (
@@ -37,6 +41,14 @@ const HomeWrapper = (props: { page: string }) => {
           <CustomText style={style.text} variant="title">
             {page}
           </CustomText>
+          {page === "Profile" && (
+            <View>
+              <CustomText>Full Name: {fullName ?? "John Doe"}</CustomText>
+              <CustomText>
+                Email Address: {emailAddress ?? "john.doe@example.com"}
+              </CustomText>
+            </View>
+          )}
         </View>
       </View>
     </SafeAreaWrapper>
@@ -65,6 +77,7 @@ const style = StyleSheet.create({
   main: {
     flex: 1,
     justifyContent: "center",
+    gap: unitSize.md,
   },
   img: {
     width: "100%",
