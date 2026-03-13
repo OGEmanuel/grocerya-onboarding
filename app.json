@@ -7,6 +7,7 @@
     "icon": "./assets/images/splash-logo.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "scheme": "grocerya",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ogunmola.secondassessment"
